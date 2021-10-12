@@ -1,0 +1,137 @@
+/* Fontes variáveis: com dois eixos: Encode Sans */
+
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans:wdth,wght@75,100;125,900&display=swap");
+
+/* CSS Variables */
+/* root level scoping. for local scope use the tag */
+:root {
+  --main-bg-color: lightgray;
+  --secondary-bg-color: white;
+}
+
+* {
+  font-family: "Encode Sans", sans-serif;
+  font-weight: 500;
+  font-stretch: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-bg-color);
+}
+
+h1 {
+  font-variation-settings: "wght" 500, "wdth" 100;
+  transition: 0.5s all;
+}
+
+h1:hover {
+  transition: 0.5s all;
+  font-variation-settings: "wght" 900, "wdth" 125;
+}
+
+#wrapper {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
+  height: 100vh;
+  background-color: var(--secondary-bg-color);
+  /* overflow: auto; */
+}
+
+@media screen and (min-width: 800px) {
+  :root {
+    --main-bg-color: red;
+  }
+
+  #wrapper {
+    width: 80%;
+    max-width: 1200px;
+  }
+}
+
+header {
+  display: block;
+  position: relative;
+  min-height: 50%;
+  background-color: darkgray;
+  padding: 0.5em;
+}
+
+nav {
+}
+main,
+#about {
+  display: block;
+  position: relative;
+  overflow: auto;
+}
+
+section#controlers {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: flex-start;
+  flex-grow: 1;
+
+  position: relative;
+  min-height: 45%;
+  background-color: var(--secondary-bg-color);
+
+  overflow: auto;
+}
+
+main > section#controlers > article {
+  background-color: var(--secondary-bg-color);
+  border-bottom: 1px solid black;
+  border-right: none;
+  width: 100%;
+  min-height: 10em;
+  flex: 1;
+}
+
+main > section#controlers > article:last-child {
+  border-bottom: none;
+  border-right: none;
+}
+
+@media screen and (min-width: 800px) {
+  section#controlers {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  main > section#controlers > article {
+    min-width: 50%;
+    padding: 0.5em;
+    border-right: 1px solid black;
+    border-bottom: none;
+  }
+
+  main > section:last-child {
+  }
+}
+
+#about {
+  margin-bottom: 6em;
+}
+
+footer {
+  display: block;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 5%;
+  background-color: var(--main-bg-color);
+}
